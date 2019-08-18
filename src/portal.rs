@@ -1,5 +1,5 @@
-use regex::Regex;
 use serde::Deserialize;
+use crate::version::Version;
 
 struct Portal {
     // Stores information needed to use the mod portal API
@@ -10,7 +10,7 @@ struct Portal {
 
 #[derive(Deserialize, Debug)]
 pub struct Release {
-    version: String,
+    version: Version,
     sha1: String,
     file_name: String,
     download_url: String,
@@ -31,12 +31,10 @@ impl ModListing {
         Ok(listing)
     }
 
-    pub fn get_release_url(&self, version: (i8, i8, i8)) -> String {
-        let release_string: String = format!("{}.{}.{}", version.0, version.1, version.2);
-
+    pub fn get_release_url(&self, version: Version) -> String {
         self.releases
             .iter()
-            .filter(|release| release.version == release_string)
+            .filter(|release| release.version == version)
             .collect::<Vec<&Release>>()
             .first()
             .unwrap()
