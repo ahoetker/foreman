@@ -1,0 +1,46 @@
+
+{
+  "mods": 
+  [
+    
+    {
+      "name": "base",
+      "enabled": true
+    },
+    
+    {
+      "name": "AutoDeconstruct",
+      "enabled": true
+    },
+    
+    {
+      "name": "Bottleneck",
+      "enabled": true
+    },
+    
+    {
+      "name": "even-distribution",
+      "enabled": true
+    },
+    
+    {
+      "name": "LogisticTrainNetwork",
+      "enabled": true
+    },
+    
+    {
+      "name": "OpteraLib",
+      "enabled": true
+    },
+    
+    {
+      "name": "stdlib",
+      "enabled": true
+    },
+    
+    {
+      "name": "VehicleSnap",
+      "enabled": false
+    }
+  ]
+}

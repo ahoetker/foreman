@@ -100,3 +100,58 @@ impl PartialEq for Version {
         self.version_tuple == other.version_tuple
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_version_from_str() {
+        assert_eq!(
+            Version::from("1.2.3"),
+            Version {
+                version_tuple: (1i8, 2i8, 3i8),
+                version_str: String::from("1.2.3"),
+            }
+        );
+    }
+
+    #[test]
+    fn test_version_from_path() {
+        use std::path::PathBuf;
+        let test_path: PathBuf = PathBuf::from("mods/test-mod_1.2.3.zip");
+        assert_eq!(
+            Version::from(test_path),
+            Version {
+                version_tuple: (1i8, 2i8, 3i8),
+                version_str: String::from("1.2.3"),
+            }
+        );
+    }
+
+    #[test]
+    fn test_version_from_tuple() {
+        assert_eq!(
+            Version::from((1i8, 2i8, 3i8)),
+            Version {
+                version_tuple: (1i8, 2i8, 3i8),
+                version_str: String::from("1.2.3"),
+            }
+        );
+    }
+
+    #[test]
+    fn test_ord() {
+        let old_version: Version = Version {
+            version_tuple: (1i8, 2i8, 3i8),
+            version_str: String::from("1.2.3"),
+        };
+
+        let new_version: Version = Version {
+            version_tuple: (1i8, 3i8, 1i8),
+            version_str: String::from("1.3.1"),
+        };
+
+        assert!(new_version > old_version);
+    }
+}

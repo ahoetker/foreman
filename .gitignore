@@ -11,3 +11,6 @@ Cargo.lock
 
 # Factorio mods
 /mods/
+
+# Player data file containing factorio.com auth token
+player-data.json

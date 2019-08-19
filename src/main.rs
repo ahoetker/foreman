@@ -1,9 +1,11 @@
+extern crate clap;
+extern crate duma;
 extern crate glob;
 extern crate rayon;
 extern crate reqwest;
 extern crate serde;
 extern crate serde_json;
-extern crate tempdir;
+extern crate tempfile;
 
 use rayon::prelude::*;
 use serde::Deserialize;
@@ -16,6 +18,7 @@ use std::vec::Vec;
 mod io;
 mod portal;
 mod version;
+use crate::portal::Portal;
 use version::Version;
 
 #[derive(Clone, Deserialize, Debug)]
@@ -69,7 +72,7 @@ impl ModList {
 }
 
 fn main() {
-    let mod_list: ModList = match ModList::new("resources/mod-list-ab.json") {
+    let mod_list: ModList = match ModList::new("resources/mod-list-utility.json") {
         Ok(mod_list) => mod_list,
         Err(e) => {
             panic!("Could not parse mod list JSON: {}", e);
@@ -82,10 +85,14 @@ fn main() {
     //        .iter()
     //        .for_each(|m| println!("{}", m));
 
-    // print out the most recent version of each enabled mod, in no particular order
-    mod_list.enabled_mods().par_iter().for_each(|m| {
+    let portal: Portal = Portal::new("resources/player-data.json").unwrap();
+
+    mod_list.enabled_mods().iter().for_each(|m| {
         match portal::ModListing::new(&m.name) {
-            Ok(ml) => println!("{}", ml.get_latest_url()),
+            Ok(ml) => {
+                let completed_dl: PathBuf = portal.download_mod(ml).unwrap();
+                println!("Download completed: {}\n", completed_dl.to_str().unwrap())
+            }
             Err(e) => println!("Could not create mod listing: {}", e),
         };
     })
