@@ -82,7 +82,6 @@ pub struct ModListing {
 
 impl ModListing {
     pub fn new(name: &str) -> Result<ModListing, Box<dyn std::error::Error>> {
-
         #[cfg(test)]
         let base: Url = Url::parse(&mockito::server_url())?;
 
@@ -107,9 +106,8 @@ impl ModListing {
 
     pub fn get_latest_version(&self) -> Version {
         self.releases
-            .clone()
-            .into_iter()
-            .map(|release| Version::from(release.version))
+            .iter()
+            .map(|release| Version::from(release.version.as_str()))
             .max()
             .unwrap()
     }
@@ -127,6 +125,19 @@ mod tests {
     use std::io::Write;
     use tempfile::{tempdir, TempDir};
 
+    fn setup() -> mockito::Mock {
+        mock("GET", "/Bottleneck")
+            .with_status(201)
+            .with_header("content-type", "application/json")
+            .with_body::<String>(
+                read_to_string("resources/bottleneck-test.json")
+                    .unwrap()
+                    .parse()
+                    .unwrap(),
+            )
+            .create()
+    }
+
     #[test]
     fn test_new_portal() {
         let dir: TempDir = tempdir().unwrap();
@@ -139,7 +150,8 @@ mod tests {
                 "service-username": "j_appleseed",
                 "service-token": "1a2b3c4d5e"
             }}"#
-        ).unwrap();
+        )
+            .unwrap();
 
         let test_portal: Portal = Portal::new(&file_path).unwrap();
         assert_eq!(test_portal.username, "j_appleseed");
@@ -151,16 +163,7 @@ mod tests {
 
     #[test]
     fn test_new_modlisting() {
-        let _m = mock("GET", "/Bottleneck")
-            .with_status(201)
-            .with_header("content-type", "application/json")
-            .with_body::<String>(
-                read_to_string("resources/bottleneck-test.json")
-                    .unwrap()
-                    .parse()
-                    .unwrap(),
-            )
-            .create();
+        let _m: mockito::Mock = setup();
 
         let mod_listing: ModListing = ModListing::new("Bottleneck").unwrap();
 
@@ -186,5 +189,13 @@ mod tests {
         };
 
         assert_eq!(mod_listing.get_latest_version(), Version::from("0.10.4"));
+    }
+
+    #[test]
+    fn test_get_latest_url() {
+        let _m: mockito::Mock = setup();
+        let mod_listing: ModListing = ModListing::new("Bottleneck").unwrap();
+
+        assert_eq!(&mod_listing.get_latest_url(), "/download/Bottleneck/5cc20d63e4ed41000b88d4d9");
     }
 }
