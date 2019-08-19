@@ -1,8 +1,11 @@
 extern crate glob;
+extern crate rayon;
 extern crate reqwest;
 extern crate serde;
 extern crate serde_json;
+extern crate tempdir;
 
+use rayon::prelude::*;
 use serde::Deserialize;
 use std::error::Error;
 use std::fs::File;
@@ -19,7 +22,6 @@ use version::Version;
 struct Mod {
     name: String,
     enabled: bool,
-    // version: Option<(i8, i8, i8)>,
     version: Option<Version>,
 }
 
@@ -67,17 +69,24 @@ impl ModList {
 }
 
 fn main() {
-    let mod_list: ModList = ModList::new("resources/mod-list-ab.json").unwrap();
+    let mod_list: ModList = match ModList::new("resources/mod-list-ab.json") {
+        Ok(mod_list) => mod_list,
+        Err(e) => {
+            panic!("Could not parse mod list JSON: {}", e);
+        }
+    };
 
-    mod_list
-        .enabled_mods()
-        .iter()
-        .for_each(|m| println!("{}", m));
+    // print out list of enabled mods and installed version
+    //    mod_list
+    //        .enabled_mods()
+    //        .iter()
+    //        .for_each(|m| println!("{}", m));
 
-    // let oresilos = portal::ModListing::new("angelsaddons-oresilos").unwrap();
-    // println!("{:?}", oresilos);
-    //
-    //
-    // let silo_url: String = oresilos.get_release_url(Version::from((0, 5, 1)));
-    // println!("{}", silo_url);
+    // print out the most recent version of each enabled mod, in no particular order
+    mod_list.enabled_mods().par_iter().for_each(|m| {
+        match portal::ModListing::new(&m.name) {
+            Ok(ml) => println!("{}", ml.get_latest_url()),
+            Err(e) => println!("Could not create mod listing: {}", e),
+        };
+    })
 }
