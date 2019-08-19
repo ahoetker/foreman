@@ -82,8 +82,6 @@ pub struct ModListing {
 
 impl ModListing {
     pub fn new(name: &str) -> Result<ModListing, Box<dyn std::error::Error>> {
-        #[cfg(test)]
-        use mockito;
 
         #[cfg(test)]
         let base: Url = Url::parse(&mockito::server_url())?;
@@ -126,8 +124,7 @@ mod tests {
     use super::*;
     use mockito::mock;
     use std::fs::read_to_string;
-    use std::fs::read;
-    use std::io::{self, Write};
+    use std::io::Write;
     use tempfile::{tempdir, TempDir};
 
     #[test]
@@ -142,7 +139,7 @@ mod tests {
                 "service-username": "j_appleseed",
                 "service-token": "1a2b3c4d5e"
             }}"#
-        );
+        ).unwrap();
 
         let test_portal: Portal = Portal::new(&file_path).unwrap();
         assert_eq!(test_portal.username, "j_appleseed");
