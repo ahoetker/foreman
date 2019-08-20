@@ -1,4 +1,3 @@
-use crate::version::Version;
 use clap::{clap_app, crate_version};
 use duma::download::http_download;
 use reqwest::Url;
@@ -8,6 +7,9 @@ use std::fs::File;
 use std::io::BufReader;
 use std::path::Path;
 use std::path::PathBuf;
+
+use crate::version::Version;
+use crate::modlist::Mod;
 
 #[derive(Deserialize, Debug)]
 pub struct Portal {
@@ -117,6 +119,12 @@ impl ModListing {
     }
 }
 
+impl From<Mod> for ModListing {
+    fn from(m: Mod) -> Self {
+        ModListing::new(&m.name).unwrap()
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -166,6 +174,24 @@ mod tests {
         let _m: mockito::Mock = setup();
 
         let mod_listing: ModListing = ModListing::new("Bottleneck").unwrap();
+
+        assert_eq!(mod_listing.name, "Bottleneck");
+        assert_eq!(mod_listing.title, "Bottleneck");
+        assert_eq!(
+            mod_listing.summary,
+            "A tool for locating input starved machines."
+        );
+    }
+
+    #[test]
+    fn test_modlisting_from_mod() {
+        let test_mod: Mod = serde_json::from_str(r#"
+            {
+                "name": "Bottleneck",
+                "enabled": true
+            }"#).unwrap();
+
+        let mod_listing: ModListing = ModListing::from(test_mod);
 
         assert_eq!(mod_listing.name, "Bottleneck");
         assert_eq!(mod_listing.title, "Bottleneck");

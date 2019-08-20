@@ -12,8 +12,10 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc15274c-2790-4438-a88f-8523be268dd6" name="Default Changelist" comment="initial commit: README.md">
+    <list default="true" id="fc15274c-2790-4438-a88f-8523be268dd6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/modlist.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/portal.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/portal.rs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,100 +31,37 @@
     <favorites_list name="foreman" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main.rs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1540">
-                  <caret line="77" column="59" lean-forward="true" selection-start-line="77" selection-start-column="59" selection-end-line="77" selection-end-column="59" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/version.rs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="114" column="13" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
-                  <folding>
-                    <element signature="e#265#266#0" expanded="true" />
-                    <element signature="e#304#305#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Cargo.toml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="400">
-                  <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/portal.rs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="522">
-                  <caret line="109" column="64" selection-start-line="109" selection-start-column="64" selection-end-line="109" selection-end-column="64" />
-                  <folding>
-                    <element signature="e#3859#3860#0" expanded="true" />
-                    <element signature="e#3921#3922#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.gitignore">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="260">
-                  <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.travis.yml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="100">
-                  <caret line="5" selection-start-line="5" selection-end-line="5" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/bottleneck-test.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="11205" lean-forward="true" selection-start-column="11205" selection-end-column="11250" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/portal.rs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="154">
-                  <caret line="91" selection-start-line="90" selection-end-line="91" />
-                  <folding>
-                    <element signature="e#3859#3860#0" expanded="true" />
-                    <element signature="e#3921#3922#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main.rs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/portal.rs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1220">
+              <caret line="61" column="92" selection-start-line="61" selection-start-column="92" selection-end-line="61" selection-end-column="92" />
+              <folding>
+                <element signature="e#3995#3996#0" expanded="true" />
+                <element signature="e#4043#4044#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Rust File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -140,18 +79,20 @@
         <option value="$PROJECT_DIR$/src/io.rs" />
         <option value="$PROJECT_DIR$/src/version.rs" />
         <option value="$PROJECT_DIR$/Cargo.toml" />
-        <option value="$PROJECT_DIR$/src/main.rs" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/Mod.rs" />
+        <option value="$PROJECT_DIR$/src/modlist.rs" />
         <option value="$PROJECT_DIR$/src/portal.rs" />
+        <option value="$PROJECT_DIR$/src/main.rs" />
       </list>
     </option>
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="GNAZRXAh" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="4">
     <option name="y" value="171" />
     <option name="width" value="1280" />
     <option name="height" value="1413" />
@@ -168,6 +109,11 @@
             <path>
               <item name="foreman" type="b2602c69:ProjectViewProjectNode" />
               <item name="foreman" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="foreman" type="b2602c69:ProjectViewProjectNode" />
+              <item name="foreman" type="462c0819:PsiDirectoryNode" />
+              <item name="mods" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="foreman" type="b2602c69:ProjectViewProjectNode" />
@@ -261,7 +207,7 @@
       <workItem from="1566104865588" duration="1392000" />
       <workItem from="1566110430917" duration="2995000" />
       <workItem from="1566114545206" duration="7777000" />
-      <workItem from="1566177340128" duration="24202000" />
+      <workItem from="1566177340128" duration="31666000" />
     </task>
     <task id="LOCAL-00001" summary="Basic downloads">
       <created>1566250354838</created>
@@ -298,43 +244,50 @@
       <option name="project" value="LOCAL" />
       <updated>1566251962107</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="remove clone in get_latest_version()">
+      <created>1566253163975</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1566253163975</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="test - 2019.08.19 at 15h 06m 06s.xml">
+    <history-entry file="test - 2019.08.19 at 15h 17m 15s.xml">
       <configuration name="test" configurationId="CargoCommandRunConfiguration" />
     </history-entry>
-    <history-entry file="test - 2019.08.19 at 15h 08m 45s.xml">
+    <history-entry file="test - 2019.08.19 at 15h 17m 25s.xml">
       <configuration name="test" configurationId="CargoCommandRunConfiguration" />
     </history-entry>
-    <history-entry file="test - 2019.08.19 at 15h 12m 19s.xml">
+    <history-entry file="test - 2019.08.19 at 15h 24m 53s.xml">
       <configuration name="test" configurationId="CargoCommandRunConfiguration" />
     </history-entry>
-    <history-entry file="test - 2019.08.19 at 15h 13m 07s.xml">
+    <history-entry file="test - 2019.08.19 at 15h 37m 12s.xml">
       <configuration name="test" configurationId="CargoCommandRunConfiguration" />
     </history-entry>
-    <history-entry file="test - 2019.08.19 at 15h 14m 02s.xml">
+    <history-entry file="test - 2019.08.19 at 15h 37m 42s.xml">
       <configuration name="test" configurationId="CargoCommandRunConfiguration" />
     </history-entry>
-    <history-entry file="test - 2019.08.19 at 15h 14m 05s.xml">
+    <history-entry file="test - 2019.08.19 at 15h 55m 16s.xml">
       <configuration name="test" configurationId="CargoCommandRunConfiguration" />
     </history-entry>
-    <history-entry file="test - 2019.08.19 at 15h 14m 07s.xml">
+    <history-entry file="test - 2019.08.19 at 16h 10m 08s.xml">
       <configuration name="test" configurationId="CargoCommandRunConfiguration" />
     </history-entry>
-    <history-entry file="test - 2019.08.19 at 15h 14m 08s.xml">
+    <history-entry file="test - 2019.08.19 at 16h 10m 40s.xml">
       <configuration name="test" configurationId="CargoCommandRunConfiguration" />
     </history-entry>
-    <history-entry file="test - 2019.08.19 at 15h 14m 14s.xml">
+    <history-entry file="test - 2019.08.19 at 16h 10m 51s.xml">
       <configuration name="test" configurationId="CargoCommandRunConfiguration" />
     </history-entry>
-    <history-entry file="test - 2019.08.19 at 15h 15m 28s.xml">
+    <history-entry file="test - 2019.08.19 at 16h 24m 45s.xml">
       <configuration name="test" configurationId="CargoCommandRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52136000" />
+    <option name="totallyTimeSpent" value="59600000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -346,15 +299,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="171" width="2560" height="1413" extended-state="6" />
+    <frame x="0" y="171" width="1280" height="1413" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17263326" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3517018" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3299712" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960223" visible="true" weight="0.34952977" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960223" visible="true" weight="0.34952977" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39968652" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -380,7 +333,9 @@
     <MESSAGE value="remove nightly allowed to fail CI" />
     <MESSAGE value="fix compiler warnings" />
     <MESSAGE value="initial commit: README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit: README.md" />
+    <MESSAGE value="remove clone in get_latest_version()" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove clone in get_latest_version()" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/libstd/rt.rs" />
@@ -392,17 +347,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src/libcore/convert.rs" />
-    <entry file="file://$PROJECT_DIR$/src/io.rs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#416#417#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src/libstd/collections/hash/map.rs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="447">
@@ -424,17 +368,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/version.rs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="114" column="13" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
-          <folding>
-            <element signature="e#265#266#0" expanded="true" />
-            <element signature="e#304#305#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/player-data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-438">
@@ -446,20 +379,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.rs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1540">
-          <caret line="77" column="59" lean-forward="true" selection-start-line="77" selection-start-column="59" selection-end-line="77" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -483,14 +402,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/io.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#416#417#0" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/mod-list-utility.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modlist.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/version.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="114" column="13" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
+          <folding>
+            <element signature="e#265#266#0" expanded="true" />
+            <element signature="e#304#305#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/portal.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="109" column="64" selection-start-line="109" selection-start-column="64" selection-end-line="109" selection-end-column="64" />
+        <state relative-caret-position="1220">
+          <caret line="61" column="92" selection-start-line="61" selection-start-column="92" selection-end-line="61" selection-end-column="92" />
           <folding>
-            <element signature="e#3859#3860#0" expanded="true" />
-            <element signature="e#3921#3922#0" expanded="true" />
+            <element signature="e#3995#3996#0" expanded="true" />
+            <element signature="e#4043#4044#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
