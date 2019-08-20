@@ -6,8 +6,8 @@ extern crate serde;
 extern crate serde_json;
 extern crate tempfile;
 
-mod modlist;
 mod io;
+mod modlist;
 mod portal;
 mod version;
 
@@ -17,7 +17,6 @@ use crate::portal::Portal;
 use modlist::ModList;
 
 fn main() {
-
     // retrieve the list of required mods
     let mod_list: ModList = match ModList::new("resources/mod-list-utility.json") {
         Ok(mod_list) => mod_list,
@@ -33,14 +32,17 @@ fn main() {
     let portal: Portal = Portal::new("resources/player-data.json").unwrap();
 
     // Download any missing or out of date mods
-    mod_list.enabled_mods().iter().for_each(|m| match m.get_updated_listing(zip_files.clone()) {
-        Ok(ml) => match ml {
-            Some(ml) => {
-                let _completed_dl: PathBuf = portal.download_mod(ml).unwrap();
-                println!()
+    mod_list
+        .enabled_mods()
+        .iter()
+        .for_each(|m| match m.get_updated_listing(zip_files.clone()) {
+            Ok(ml) => match ml {
+                Some(ml) => {
+                    let _completed_dl: PathBuf = portal.download_mod(ml).unwrap();
+                    println!()
+                }
+                None => (),
             },
-            None => ()
-        },
-        Err(e) => println!("{}", e)
-    })
+            _ => (),
+        })
 }

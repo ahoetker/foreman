@@ -8,8 +8,8 @@ use std::io::BufReader;
 use std::path::Path;
 use std::path::PathBuf;
 
-use crate::version::Version;
 use crate::modlist::Mod;
+use crate::version::Version;
 
 #[derive(Deserialize, Debug)]
 pub struct Portal {
@@ -159,7 +159,7 @@ mod tests {
                 "service-token": "1a2b3c4d5e"
             }}"#
         )
-            .unwrap();
+        .unwrap();
 
         let test_portal: Portal = Portal::new(&file_path).unwrap();
         assert_eq!(test_portal.username, "j_appleseed");
@@ -185,11 +185,14 @@ mod tests {
 
     #[test]
     fn test_modlisting_from_mod() {
-        let test_mod: Mod = serde_json::from_str(r#"
+        let test_mod: Mod = serde_json::from_str(
+            r#"
             {
                 "name": "Bottleneck",
                 "enabled": true
-            }"#).unwrap();
+            }"#,
+        )
+        .unwrap();
 
         let mod_listing: ModListing = ModListing::from(test_mod);
 
@@ -222,6 +225,9 @@ mod tests {
         let _m: mockito::Mock = setup();
         let mod_listing: ModListing = ModListing::new("Bottleneck").unwrap();
 
-        assert_eq!(&mod_listing.get_latest_url(), "/download/Bottleneck/5cc20d63e4ed41000b88d4d9");
+        assert_eq!(
+            &mod_listing.get_latest_url(),
+            "/download/Bottleneck/5cc20d63e4ed41000b88d4d9"
+        );
     }
 }
